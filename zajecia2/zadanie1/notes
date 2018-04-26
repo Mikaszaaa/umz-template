@@ -1,0 +1,67 @@
+1) Jaki jest rozkład próby treningowej (ile procent z próbek to te, w której osoba się znajduje).
+
+0.2123296082524868
+
+2)Jaką dokładność będzie miał algorytm zero rule na zbiorze deweloperskim?
+
+	dokładność modelu Zero rule na zestawie deweloperskim 0.6352720450281426
+-----------------------------------------------------------------------------------------------------------------------------------
+
+3)Oblicz dokładność, czułość, swoistość (accuracy, specifity, sensivity) na danych treningowych oraz deweloperskich modelu.
+----------------
+Dane treningowe:
+----------------
+True Positives: 1724
+True Negatives: 6324
+False Positives: 90
+False Negatives: 5
+
+
+accuracy: ACC= (TP + TN) / (TP +FP + FN + TN)
+		ACC = 8048 / 8143 = 0,98833353
+
+specificity: SPC = TN/N = TN / (TN + FP)
+		SPC = 6324 / 6414 = 0,9859681946
+
+sensitivity: TPR = TP/P = TP / (TP + FN)
+		TPR = 1724 / 1729 = 0,997108155
+
+-------------------
+Dane deweloperskie:
+-------------------
+True Positives: 969
+True Negatives: 1638
+False Positives: 55
+False Negatives: 3
+
+accuracy: ACC= (TP + TN) / (TP +FP + FN + TN)
+		ACC = 2607 / 2665 = 0,9782363977
+
+specificity: SPC = TN/N = TN / (TN + FP)
+		SPC = 1638 / 1693 = 0,96751329
+
+sensitivity: TPR = TP/P = TP / (TP + FN)
+		TPR = 969 / 972 = 0,9969135802
+
+-------------------------------------------------------------------------------------------------------------
+
+4) Macierz błędu dla danych treningowych i deweloperskich.
+----------------
+Dane treningowe:
+----------------
+				   Klasa rzeczywista
+				pozytywna	negatywna
+Klasa 		|pozytywna	TP = 1724	FP = 90
+predykowana	|negatywna	FN = 5		TN = 6324
+
+-------------------
+Dane deweloperskie:
+-------------------
+
+				   Klasa rzeczywista
+				pozytywna	negatywna
+Klasa 		|pozytywna	TP = 969	FP = 55
+predykowana	|negatywna	FN = 3		TN = 1638
+
+
+
