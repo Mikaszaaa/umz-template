@@ -6,7 +6,7 @@ g: 0,693227092
 
 2) Jaką dokładność będzie miał algorytm zero rule na zbiorze deweloperskim?
 
-
+0,52
 
 3) Oblicz dokładność, czułość, swoistość (accuracy, specifity, sensivity) na danych treningowych oraz deweloperskich modelu.
 
