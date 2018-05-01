@@ -64,8 +64,6 @@ print(rdev.head())
 kl = lr.predict(rdev.five.values.reshape(-1, 1))
 
 
-#pd.DataFrame(kl).to_csv('dev-0/out.tsv')
-
 print('-'*100)
 print('zapisywanie do pliku dev-0/out.tsv...')
 file = open(os.path.join('dev-0', 'out.tsv'), 'w')
@@ -104,17 +102,18 @@ print(ui.head())
 er = lr.predict(pd.DataFrame(ui, columns=['five']))
 
 
-#pd.DataFrame(er).to_csv('test-A/out.tsv')
 
 file = open(os.path.join('test-A', 'out.tsv'), 'w')
 for line in list(er):
     file.write(str(line)+'\n') 
 print('zapisano do pliku test-A/out.tsv')
 
-#print('Generowanie wykresu...')
-#sns.regplot(x=rdev.five, y=rdev_expected.powroty, logistic=True, y_jitter=.1)
-#plt.show()
 
+rdev_expected["y"]=rdev_expected["powroty"].map( {'g': 0, 'b': 1} ).astype(int)
+print(rdev_expected.head())
+print('Generowanie wykresu...')
+sns.regplot(x=rdev.five, y=rdev_expected.y, logistic=True, y_jitter=.1)
+plt.show()
 
 
 
