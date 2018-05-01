@@ -16,14 +16,17 @@ def get_sensivity(test, predictions_list):
 
 
 def get_specifity(test, predictions_list):
-    # TO TRZEBA NAPISAĆ (przekleić z get_sensivity i zmienić jedną linijkę zgodnie z
-    # definicją specifity
-    pass
+    aktually_ham = sum([1 for x in test if not x.is_spam])
+    TN = len([1 for x, y in zip(test, predictions_list)
+              if (y == False and not x.is_spam)])
+    return TN / aktually_ham
 
 
 def get_precision(test, predictions_list):
-    # JW
-    pass
+    all_positives = sum(predictions_list)
+    TP = len([1 for x, y in zip(test, predictions_list)
+              if (y == True and x.is_spam)])
+    return TP / all_positives
 
 
 def get_fmeas(test, predictions_list):
@@ -53,3 +56,4 @@ print('sensivity:\t', sens)
 print('specifity:\t', spec)
 print('precision:\t', prec)
 print('f-measure:\t', fmeas)
+
