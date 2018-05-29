@@ -14,9 +14,6 @@ train_Y = train['Class']
 test_X = pd.DataFrame(test, columns=test.columns[:-1])
 test_Y = test['Class']
 
-clf = tree.DecisionTreeClassifier()
-clf = clf.fit(train_X, train_Y)
-
 
 def show_plot():
     dot_data = tree.export_graphviz(clf, out_file=None,
