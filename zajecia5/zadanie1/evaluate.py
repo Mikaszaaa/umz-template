@@ -57,3 +57,18 @@ print((predictions_dev == Y_dev).mean())
 with open(os.path.join("dev-0", "out.tsv"), 'w') as file:
     for prediction in predictions_dev:
         file.write(str(prediction[0]) + '\n')
+
+#ZBIOR TESTOWY
+
+k = pd.read_csv(os.path.join("test-A", "in.tsv"), header=None, names=[
+                "date", "Temperature", "Humidity", "Light", "CO2", "HumidityRatio"], sep='\t')
+
+X_test = pd.DataFrame(
+    k, columns=["Temperature", "Humidity", "Light", "CO2", "HumidityRatio"])
+predictions_test = estimator.predict(X_test)
+
+with open(os.path.join("test-A", "out.tsv"), 'w') as file:
+    for prediction in predictions_test:
+        file.write(str(prediction[0]) + '\n')
+
+
